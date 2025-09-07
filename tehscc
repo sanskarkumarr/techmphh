@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>TechSSC Solutions - Learn More</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+body {
+  font-family:"Segoe UI",Arial,sans-serif;
+  background: linear-gradient(135deg, #0d47a1, #ffd700, #000000);
+  color:#fff;
+  min-height:100vh;
+  overflow-x:hidden;
+  position:relative;
+}
+
+/* Header */
+header {
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 20px;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+  border-bottom:1px solid rgba(255,255,255,0.2);
+  z-index:999;
+}
+
+.logo-container {
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo-container img {
+  height:60px;
+  width:auto;
+  border-radius:10px;
+}
+
+.logo-container span {
+  font-size:24px;
+  font-weight:bold;
+  color:#ffd700;
+  text-shadow:1px 1px 4px #000;
+}
+
+nav{overflow-x:auto;}
+nav ul{display:flex;list-style:none;gap:20px;white-space:nowrap;padding-bottom:5px;}
+nav ul li a{color:#fff;text-decoration:none;padding:8px 16px;border-radius:8px;font-weight:bold;transition:0.3s;}
+nav ul li a:hover, nav ul li a.active{background:#ffd700;color:#000;transform:scale(1.05);}
+
+/* Hero Section */
+.hero {
+  position:relative;
+  height:50vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background: rgba(0,0,0,0.5);
+  padding:30px;
+  margin-top:80px;
+}
+
+.hero h1 {
+  font-size:48px;
+  color:#ffd700;
+  margin-bottom:10px;
+  text-shadow:2px 2px 6px rgba(0,0,0,0.7);
+}
+
+.hero p {
+  font-size:20px;
+  max-width:800px;
+  line-height:1.6;
+  text-shadow:1px 1px 3px rgba(0,0,0,0.6);
+}
+
+/* Section Styles */
+section {
+  padding:80px 20px;
+  max-width:1100px;
+  margin:0 auto;
+  text-align:left;
+  position:relative;
+}
+
+section h2 {
+  font-size:36px;
+  margin-bottom:20px;
+  color:#ffd700;
+  text-shadow:1px 1px 4px rgba(0,0,0,0.7);
+}
+
+section p {
+  font-size:18px;
+  line-height:1.8;
+  margin-bottom:20px;
+}
+
+/* Buttons */
+.buttons a {
+  background: rgba(0,0,0,0.7);
+  color:#ffd700;
+  padding:14px 28px;
+  border-radius:30px;
+  font-weight:bold;
+  text-transform:uppercase;
+  text-decoration:none;
+  margin-right:10px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  box-shadow:0 4px 12px rgba(0,0,0,0.5);
+}
+
+.buttons a:hover {
+  background:#ffd700;
+  color:#000;
+  transform:scale(1.05);
+  box-shadow:0 0 20px #ffd700;
+}
+
+/* Footer */
+footer {
+  background: rgba(0,0,0,0.7);
+  text-align:center;
+  padding:20px;
+  width:100%;
+  font-weight:bold;
+  color:#ffd700;
+  border-top:1px solid rgba(255,255,255,0.2);
+  margin-top:50px;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-container">
+    <img src="https://www.bing.com/images/blob?bcid=S9yCJDvlB-cIhtUQu..5jOdYgf40.....0w" alt="TechSSC Logo">
+    <span>TechSSC Solutions</span>
+  </div>
+  <nav>
+    <ul>
+       <li><a href="home.html">Home</a></li>
+      <li><a href="techssc.html" class="active">Learn More</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>TechSSC Solutions</h1>
+  <p>Empowering businesses with BPO staffing, CCTV surveillance, and comprehensive customer support solutions.</p>
+</section>
+
+<!-- CCTV Surveillance Section -->
+<section>
+  <h2>CCTV Surveillance</h2>
+  <p>
+    Our CCTV surveillance solutions ensure safety and security for schools, hospitals, and commercial establishments. 
+    With state-of-the-art cameras, 24/7 monitoring, and smart analytics, TechSSC Solutions provides peace of mind 
+    while protecting valuable assets and people.
+  </p>
+  <p>
+    We tailor our surveillance systems to meet the unique requirements of each client, offering remote monitoring, 
+    cloud storage, and real-time alerts to maximize efficiency and reliability.
+  </p>
+</section>
+
+<!-- BPO Staffing Section -->
+<section>
+  <h2>BPO Staffing Solutions</h2>
+  <p>
+    TechSSC Solutions specializes in connecting companies with the right talent for BPO operations, both in India and abroad. 
+    We provide highly trained professionals for customer service, technical support, and sales teams. 
+    Our rigorous recruitment process ensures only the best candidates are selected to meet your business needs.
+  </p>
+  <p>
+    Partner with us to scale your operations efficiently and build a workforce that delivers consistent performance 
+    across multiple industries and geographies.
+  </p>
+</section>
+
+<!-- Customer Support Section -->
+<section>
+  <h2>Customer Support & Sales Teams</h2>
+  <p>
+    Our customer support services include both inbound and outbound support, covering technical assistance, 
+    client queries, and sales-related support. We empower businesses to enhance customer satisfaction, 
+    drive retention, and improve sales performance.
+  </p>
+  <p>
+    From chat, call, or email support to fully managed customer experience solutions, TechSSC Solutions provides 
+    scalable support services tailored to your business goals.
+  </p>
+  <div class="buttons">
+    <a href="contact.html">Contact Support Team</a>
+    <a href="contact.html">Request Sales Support</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 TechSSC Solutions. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
