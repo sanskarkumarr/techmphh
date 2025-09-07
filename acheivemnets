@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Achievements - TechMph Solutions</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS69uHkhcuqC4bXrMzmlaMS7SgslpKAO7pW7w&s") no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(90deg, rgba(0,0,50,0.9), rgba(0,0,0,0.8), rgba(0,0,80,0.9));
+      padding: 12px 24px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.5);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Logo + Text */
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-container img {
+      height: 45px;
+      width: auto;
+    }
+    .logo-container span {
+      font-size: 22px;
+      font-weight: bold;
+      color: #ffd700; /* Gold Yellow */
+    }
+
+    /* Navigation */
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+    nav ul li a:hover, nav ul li a.active {
+      background: linear-gradient(45deg, #ffd700, #003366);
+      color: #000;
+      font-weight: bold;
+    }
+
+    /* Content Box */
+    .content-box {
+      margin-top: 120px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 50px;
+      border-radius: 12px;
+      max-width: 900px;
+      margin: 120px auto;
+      text-align: center;
+    }
+    h1, h2 {
+      color: #ffd700;
+      margin-bottom: 20px;
+    }
+    ul {
+      text-align: left;
+      margin-top: 20px;
+    }
+    li {
+      margin: 12px 0;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    footer {
+      background: rgba(0, 0, 50, 0.9);
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+      color: #ffd700;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="https://www.bing.com/images/blob?bcid=S9yCJDvlB-cIhtUQu..5jOdYgf40.....0w" alt="TechMph Solutions Logo">
+      <span>TechMph Solutions</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="clients.html">Clients</a></li>
+        <li><a href="achievements.html" class="active">Achievements</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="content-box">
+    <h1>Our Achievements</h1>
+    <p>Since our incorporation in <b>2007</b>, TechMorph Solutions has consistently achieved milestones that reflect our dedication to innovation, excellence, and client success. Here are some of the highlights of our journey:</p>
+
+    <ul>
+      <li>🏆 Successfully completed <b>500+ IT projects</b> across diverse industries including finance, healthcare, retail, and manufacturing.</li>
+      <li>🌍 Expanded operations globally with clients in <b>Europe, USA, and Asia</b>.</li>
+      <li>💡 Launched proprietary <b>AI-driven business automation tools</b> in 2015 that helped reduce costs by up to 40% for enterprise clients.</li>
+      <li>🤝 Partnered with <b>20+ Fortune 500 companies</b> for long-term IT consulting and digital transformation projects.</li>
+      <li>📈 Recognized as one of the <b>Top Emerging IT Service Providers</b> in Eastern Europe (2020).</li>
+      <li>🔒 Implemented cutting-edge <b>cybersecurity frameworks</b> safeguarding data of more than 1 million end-users.</li>
+      <li>🌱 Initiated <b>Green IT practices</b> in 2022, reducing our carbon footprint by 30%.</li>
+    </ul>
+
+    <p>Our journey continues, with each milestone driving us closer to our vision of becoming a global leader in IT innovation.</p>
+  </section>
+
+  <footer>
+    <p>© 2025 TechMph Solutions. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
