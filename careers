@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Careers - TechMph Solutions</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKMYIo8uycih6lPNH0Pq6PoebErOUuSTBvjw&s") no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+    header {
+      background: rgba(0, 0, 50, 0.8);
+      padding: 14px 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-container img {
+      height: 40px;
+      border-radius: 6px;
+    }
+    .logo-container span {
+      color: #ffd700;
+      font-weight: bold;
+      font-size: 22px;
+    }
+    nav ul { list-style: none; display: flex; gap: 18px; margin: 0; padding: 0; }
+    nav ul li a {
+      color: #fff; text-decoration: none; padding: 8px 14px; border-radius: 6px; transition: 0.3s;
+    }
+    nav ul li a:hover, nav ul li a.active {
+      background: linear-gradient(45deg, #ffd700, #ffb700);
+      color: #000;
+    }
+    .content-box {
+      margin-top: 100px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 50px;
+      border-radius: 12px;
+      max-width: 900px;
+      margin: 100px auto;
+      text-align: center;
+    }
+    h1, h2 { color: #ffd700; margin-bottom: 20px; }
+    p { margin-bottom: 16px; line-height: 1.6; }
+
+    /* Upload Resume */
+    .upload-box {
+      margin-top: 30px;
+      padding: 20px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      text-align:left;
+    }
+    .upload-box label {
+      font-weight: bold;
+      color: #ffd700;
+      margin-bottom: 10px;
+      display: block;
+    }
+    input[type="file"], select {
+      display: block;
+      margin: 10px 0 20px 0;
+      padding: 10px;
+      width: 100%;
+      border-radius: 6px;
+      border: none;
+      font-size: 15px;
+    }
+    button {
+      background: linear-gradient(45deg, #ffd700, #ffb700);
+      color: #000;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      background: linear-gradient(45deg, #ffb700, #ffd700);
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #ffd700;
+    }
+    footer {
+      background: rgba(0, 0, 50, 0.8);
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+
+    /* AI Bot Button */
+    #ai-bot-btn {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 1000;
+    }
+    #ai-bot-btn button {
+      background: linear-gradient(45deg, #15051f, #191098);
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 28px;
+      color: #222;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    #ai-bot-btn button:hover { transform: scale(1.1); }
+
+    /* AI Bot Modal */
+    #ai-bot-modal {
+      display: none;
+      position: fixed;
+      bottom: 100px;
+      right: 28px;
+      width: 320px;
+      background: #222b;
+      border-radius: 16px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.35);
+      z-index: 1001;
+      overflow: hidden;
+      font-size: 15px;
+      animation: fadeIn 0.2s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    #ai-bot-modal .header {
+      background: linear-gradient(45deg, #1e012c, #550cdc);
+      color: #222;
+      padding: 14px;
+      font-weight: bold;
+      text-align: center;
+      position: relative;
+    }
+    #ai-bot-modal .close-btn {
+      position: absolute;
+      right: 12px;
+      top: 8px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+    #ai-bot-chat {
+      padding: 16px;
+      min-height: 120px;
+      max-height: 190px;
+      overflow-y: auto;
+      background: #222b;
+      color: #fff;
+    }
+    #ai-bot-modal form {
+      display: flex;
+      border-top: 1px solid #ffd700;
+      background: #222b;
+    }
+    #ai-bot-input {
+      flex: 1;
+      border: none;
+      padding: 10px;
+      font-size: 15px;
+      background: #222b;
+      color: #fff;
+      outline: none;
+    }
+    #ai-bot-modal button[type="submit"] {
+      background: #ffd700;
+      color: #222;
+      border: none;
+      padding: 0 18px;
+      cursor: pointer;
+      border-radius: 0;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+    #ai-bot-modal button[type="submit"]:hover { background: #ffb700; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="https://www.bing.com/images/blob?bcid=S9yCJDvlB-cIhtUQu..5jOdYgf40.....0w" alt="TechMph Solutions Logo">
+      <span>TechMph Solutions</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="clients.html">Clients</a></li>
+        <li><a href="achievements.html">Achievements</a></li>
+        <li><a href="careers.html" class="active">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="content-box">
+    <h1>Careers at TechMph Solutions</h1>
+    <p>At <b>TechMph Solutions</b>, we believe in creating opportunities that empower our employees to grow, innovate, and lead.</p>
+    <p>We’re always on the lookout for passionate, talented individuals who want to be part of our journey.</p>
+
+    <h2>Join Our Team</h2>
+    <p>Submit your resume and take the first step towards an exciting career with us.</p>
+
+    <div class="upload-box">
+      <form>
+        <label for="department">Select Corporate Department</label>
+        <select id="department" name="department" required>
+          <option value="">-- Select Department --</option>
+          <option value="IT">IT Department</option>
+          <option value="HR">Human Resources</option>
+          <option value="Marketing">Marketing</option>
+          <option value="Sales">Sales</option>
+          <option value="CustomerSupport">Customer Support</option>
+          <option value="Finance">Finance</option>
+        </select>
+
+        <input type="file" name="resume" accept=".pdf,.doc,.docx" required>
+        <button type="submit">Upload Resume</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 TechMph Solutions. All Rights Reserved.</p>
+  </footer>
+
+  <!-- AI Bot Button -->
+  <div id="ai-bot-btn">
+    <button onclick="openAIBot()" title="Ask AI Bot">🤖</button>
+  </div>
+
+  <!-- AI Bot Chat Modal -->
+  <div id="ai-bot-modal">
+    <div class="header">
+      Ask AI Bot
+      <span class="close-btn" onclick="closeAIBot()">&times;</span>
+    </div>
+    <div id="ai-bot-chat">
+      <div><b>🤖:</b> Hi! Ask me anything about TechMph Solutions or careers. 👋</div>
+    </div>
+    <form onsubmit="return sendAIBotMessage();">
+      <input type="text" id="ai-bot-input" placeholder="Type your question..." autocomplete="off" />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <script>
+    function openAIBot() {
+      document.getElementById('ai-bot-modal').style.display = 'block';
+      document.getElementById('ai-bot-input').focus();
+    }
+    function closeAIBot() {
+      document.getElementById('ai-bot-modal').style.display = 'none';
+    }
+    function sendAIBotMessage() {
+      var chat = document.getElementById('ai-bot-chat');
+      var input = document.getElementById('ai-bot-input');
+      var userMsg = input.value.trim();
+      if(userMsg) {
+        chat.innerHTML += `<div><b>You:</b> ${userMsg}</div>`;
+        setTimeout(function(){
+          chat.innerHTML += `<div><b>🤖:</b> Thank you for your question! Our team will get back to you soon.</div>`;
+          chat.scrollTop = chat.scrollHeight;
+        }, 600);
+        input.value = "";
+        chat.scrollTop = chat.scrollHeight;
+      }
+      return false;
+    }
+  </script>
+</body>
+</html>
