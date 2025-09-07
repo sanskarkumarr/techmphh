@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>TechMph Solutions - Home</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+body {
+  font-family:"Segoe UI",Arial,sans-serif;
+  background: linear-gradient(135deg, #ffd700, #0d47a1, #000000);
+  color:#fff;
+  min-height:100vh;
+  overflow-x:hidden;
+  position:relative;
+}
+body::after {
+  content:"";
+  position:absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 4px);
+  z-index:0;
+  pointer-events:none;
+}
+header {
+  position:fixed; top:0; width:100%; display:flex; justify-content:space-between; align-items:center;
+  padding:10px 20px; background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); border-bottom:1px solid rgba(255,255,255,0.2); z-index:999;
+}
+.logo-container { display:flex; align-items:center; gap:10px; }
+.logo-container img { height:60px; width:auto; border-radius:10px; box-shadow:0 0 12px rgba(0,0,0,0.5);}
+.logo-container span { font-size:24px; font-weight:bold; color:#ffd700; text-shadow:1px 1px 4px #000;}
+nav{overflow-x:auto;}
+nav ul{display:flex;list-style:none;gap:20px;white-space:nowrap;padding-bottom:5px;}
+nav ul::-webkit-scrollbar{height:6px;}
+nav ul::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.3);border-radius:3px;}
+nav ul::-webkit-scrollbar-track{background:rgba(0,0,0,0.1);}
+nav ul li a{color:#fff;text-decoration:none;padding:8px 16px;border-radius:8px;font-weight:bold;transition:0.3s;}
+nav ul li a:hover, nav ul li a.active{background:#ffd700;color:#000;transform:scale(1.05);}
+.hero {
+  position:relative; height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center;
+  text-align:center; background: rgba(0,0,0,0.3); padding:30px; margin-top:80px; overflow:hidden; z-index:1;
+}
+.hero::before {
+  content:"TechMph Solutions"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  font-size:120px; font-weight:900; color:rgba(255,255,255,0.05); z-index:0; user-select:none; white-space:nowrap;
+}
+.hero h1 { font-size:48px; color:#ffd700; margin-bottom:20px; text-shadow:2px 2px 6px rgba(0,0,0,0.7);}
+.hero p { font-size:20px; max-width:800px; line-height:1.6; text-shadow:1px 1px 3px rgba(0,0,0,0.6);}
+.buttons { display:flex; gap:15px; flex-wrap:wrap; justify-content:center;}
+.buttons a {
+  background: rgba(0,0,0,0.7); color:#ffd700; padding:14px 28px; border-radius:30px; font-weight:bold;
+  text-transform:uppercase; text-decoration:none; transition:all 0.3s ease; backdrop-filter: blur(5px);
+  box-shadow:0 4px 12px rgba(0,0,0,0.5);
+}
+.buttons a:hover { background:#ffd700; color:#000; transform:scale(1.1); box-shadow:0 0 20px #ffd700;}
+
+/* TechSCC Solutions Section */
+.techscc {
+  background: rgba(0,0,0,0.5);
+  margin:50px auto;
+  padding:50px 20px;
+  border-radius:20px;
+  max-width:1200px;
+  text-align:center;
+  box-shadow:0 0 20px rgba(0,0,0,0.6);
+}
+.techscc h2 { font-size:40px; color:#ffd700; margin-bottom:30px; text-shadow:2px 2px 5px #000; }
+.techscc .cards { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; }
+.techscc .card {
+  background: rgba(255,255,255,0.05);
+  padding:25px;
+  border-radius:20px;
+  width:280px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.5);
+  transition:all 0.3s ease;
+}
+.techscc .card:hover { transform:scale(1.05); box-shadow:0 0 20px #ffd700; }
+.techscc .card h3 { font-size:24px; color:#ffd700; margin-bottom:15px; }
+.techscc .card p { font-size:16px; line-height:1.5; text-align:left; color:#fff; }
+.techscc .card a { display:inline-block; margin-top:15px; text-decoration:none; color:#000; background:#ffd700; padding:8px 20px; border-radius:20px; font-weight:bold; transition:0.3s;}
+.techscc .card a:hover { background:#fff; color:#000; }
+
+/* Footer */
+footer {
+  background: rgba(0,0,0,0.6); text-align:center; padding:20px; width:100%;
+  font-weight:bold; color:#ffd700; backdrop-filter: blur(10px); border-top:1px solid rgba(255,255,255,0.2);
+}
+
+/* Floating Fun Zone Button */
+.funzone-btn { position: fixed; bottom: 30px; left: 30px; background: #ffd700; color: #000; padding: 16px 28px;
+  border-radius: 50px; font-weight: bold; text-decoration: none; font-size: 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); transition: all 0.3s ease; z-index: 1000;}
+.funzone-btn:hover { transform: scale(1.1); background: #fff; color: #000;}
+
+/* AI Chat Bot */
+.chatbot-container { position: fixed; bottom: 30px; right: 30px; z-index: 1000; }
+.chatbot-btn { background: #0d47a1; color: #ffd700; padding: 16px; border-radius: 50%; font-size: 22px; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.5); transition: all 0.3s ease;}
+.chatbot-btn:hover { transform: scale(1.1);}
+.chatbox { position: absolute; bottom: 70px; right: 0; width: 300px; max-height: 400px; background: rgba(0,0,0,0.9);
+  color: #fff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.6); display: none; flex-direction: column; overflow: hidden;}
+.chatbox-header { background: #ffd700; color: #000; padding: 10px; font-weight: bold; text-align: center;}
+.chatbox-messages { flex: 1; padding: 10px; overflow-y: auto; font-size: 14px; }
+#chat-input { border: none; padding: 10px; width: 100%; box-sizing: border-box; outline: none; background: #222; color: #fff;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-container">
+    <img src="https://www.bing.com/images/blob?bcid=S9yCJDvlB-cIhtUQu..5jOdYgf40.....0w" alt="TechMph Solutions Logo">
+    <span>TechMph Solutions</span>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="clients.html">Clients</a></li>
+      <li><a href="achievements.html">Achievements</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Welcome to TechMph Solutions</h1>
+  <p>Founded in 2025, TechMph Solutions is a global IT service provider based in Georgia, delivering innovative solutions in software development, cloud, cybersecurity, and digital transformation. We help businesses grow smarter, faster, and safer.</p>
+  <div class="buttons">
+    <a href="services.html">Our Services</a>
+    <a href="clients.html">Our Clients</a>
+    <a href="achievements.html">Our Achievements</a>
+    <a href="careers.html">Careers</a>
+    <a href="contact.html">Contact Us</a>
+  </div>
+</section>
+
+<!-- TechSCC Solutions Section -->
+<section class="techscc">
+  <h2>TechSCC Solutions</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>CCTV Surveillance</h3>
+      <p>Providing state-of-the-art CCTV surveillance for schools, hospitals, and offices. Ensure safety with live monitoring, recording, and smart alerts.</p>
+      <a href="techscc.html">Learn More</a>
+    </div>
+    <div class="card">
+      <h3>Staffing Services</h3>
+      <p>Connecting companies with top talent both in India and abroad. We provide staffing solutions for all industries ensuring the right fit for your business.</p>
+      <a href="techscc.html">Learn More</a>
+    </div>
+    <div class="card">
+      <h3>Customer Support</h3>
+      <p>Offering professional customer support and sales teams. Enhance your client experience with expert representatives for queries, assistance, and sales conversions.</p>
+      <a href="techscc.html">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<!-- Floating Fun Zone Button -->
+<a href="dashbard.html" class="funzone-btn">Explore Our Fun Zone</a>
+
+<!-- AI Chat Bot -->
+<div class="chatbot-container">
+  <div class="chatbot-btn">💬 Chat AI</div>
+  <div class="chatbox">
+    <div class="chatbox-header">AI Chat</div>
+    <div class="chatbox-messages" id="chat-messages"></div>
+    <input type="text" id="chat-input" placeholder="Type your message...">
+  </div>
+</div>
+
+
+<script>
+const chatbotBtn = document.querySelector('.chatbot-btn');
+const chatbox = document.querySelector('.chatbox');
+const chatMessages = document.getElementById('chat-messages');
+const chatInput = document.getElementById('chat-input');
+
+chatbotBtn.addEventListener('click', () => {
+  chatbox.style.display = chatbox.style.display === 'flex' ? 'none' : 'flex';
+  chatbox.style.flexDirection = 'column';
+});
+
+chatInput.addEventListener('keypress', function(e) {
+  if(e.key === 'Enter' && chatInput.value.trim() !== '') {
+    const userMsg = document.createElement('div');
+    userMsg.textContent = "You: " + chatInput.value;
+    userMsg.style.marginBottom = "8px";
+    chatMessages.appendChild(userMsg);
+
+    const aiMsg = document.createElement('div');
+    aiMsg.textContent = "AI: " + "Thanks for your message! We will get back shortly.";
+    aiMsg.style.marginBottom = "8px";
+    aiMsg.style.color = "#ffd700";
+    chatMessages.appendChild(aiMsg);
+
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+    chatInput.value = "";
+  }
+});
+</script>
+</body>
+</html>
+<!-- Stock Market Training Section -->
+<section class="techscc">
+  <h2>Stock Market Training</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Beginner to Advanced Classes</h3>
+      <p>Comprehensive training in stock market basics, technical analysis, trading strategies, and risk management. Learn to trade confidently in Indian and global markets.</p>
+      <a href="stocktraining.html">Learn More</a>
+    </div>
+    <div class="card">
+      <h3>Practical Workshops</h3>
+      <p>Hands-on workshops with real-time market simulations, live trading sessions, and portfolio management exercises for practical learning experience.</p>
+      <a href="stocktraining.html">Learn More</a>
+    </div>
+    <div class="card">
+      <h3>Personal Mentorship</h3>
+      <p>Get one-on-one guidance from expert traders to refine strategies, analyze market trends, and achieve your financial goals efficiently.</p>
+      <a href="stocktraining.html">Learn More</a>
+    </div>
+  </div>
+</section>
+
