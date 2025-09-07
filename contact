@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us - TechMph Solutions</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKMYIo8uycih6lPNH0Pq6PoebErOUuSTBvjw&s") no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+    header {
+      background: rgba(0, 0, 50, 0.8);
+      padding: 14px 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-container img {
+      height: 40px;
+      border-radius: 6px;
+    }
+    .logo-container span {
+      color: #ffd700;
+      font-weight: bold;
+      font-size: 22px;
+    }
+    nav ul { list-style: none; display: flex; gap: 18px; margin: 0; padding: 0; }
+    nav ul li a {
+      color: #fff; text-decoration: none; padding: 8px 14px; border-radius: 6px; transition: 0.3s;
+    }
+    nav ul li a:hover, nav ul li a.active {
+      background: linear-gradient(45deg, #ffd700, #ffb700);
+      color: #000;
+    }
+    .content-box {
+      margin-top: 100px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 50px;
+      border-radius: 12px;
+      max-width: 900px;
+      margin: 100px auto;
+    }
+    h1, h2 { color: #ffd700; margin-bottom: 20px; }
+    p { margin-bottom: 16px; line-height: 1.6; }
+
+    /* Form */
+    form {
+      display: grid;
+      gap: 15px;
+    }
+    input, textarea {
+      padding: 12px;
+      border-radius: 6px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+    }
+    textarea { resize: none; height: 120px; }
+    button {
+      background: linear-gradient(45deg, #ffd700, #ffb700);
+      color: #000;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      background: linear-gradient(45deg, #ffb700, #ffd700);
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #ffd700;
+    }
+
+    /* Contact Info */
+    .contact-info {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .info-box {
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    /* Map */
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      margin-top: 30px;
+      border-radius: 10px;
+    }
+
+    footer {
+      background: rgba(0, 0, 50, 0.8);
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="https://www.bing.com/images/blob?bcid=S9yCJDvlB-cIhtUQu..5jOdYgf40.....0w" alt="TechMph Solutions Logo">
+      <span>TechMph Solutions</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="clients.html">Clients</a></li>
+        <li><a href="achievements.html">Achievements</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="content-box">
+    <h1>Contact Us</h1>
+    <p>We’d love to hear from you! Reach out for inquiries, collaborations, or support.</p>
+
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <input type="text" placeholder="Subject" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="contact-info">
+      <div class="info-box">
+        <h2>📍 Address</h2>
+        <p>Gola, Heramdaga, Ramgarh 829110, Jharkhand</p>
+      </div>
+      <div class="info-box">
+        <h2>📞 Phone</h2>
+        <p>+91 6284050354</p>
+      </div>
+      <div class="info-box">
+        <h2>📧 Email</h2>
+        <p>info@techmorphsolutions.com</p>
+      </div>
+    </div>
+
+    <!-- Google Map for Heramdaga, Gola, Ramgarh, Jharkhand -->
+    <iframe
+      width="600"
+      height="450"
+      style="border:0;"
+      loading="lazy"
+      allowfullscreen
+      referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d10000!2d85.712654!3d23.549112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1694000000000!5m2!1sen!2sin">
+    </iframe>
+  </section>
+
+  <footer>
+    <p>© 2025 TechMph Solutions. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
