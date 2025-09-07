@@ -1,1 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fun Zone - Social Media</title>
+<style>
+  * {margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth;}
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg,#0d47a1,#000,#ffd700);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    color:#fff;
+  }
+
+  .container {
+    position:relative;
+    z-index:1;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    border-radius:20px;
+    padding:40px 30px;
+    width:95%;
+    max-width:500px;
+    text-align:center;
+    box-shadow:0 15px 30px rgba(0,0,0,0.5);
+  }
+
+  .logo {
+    font-size:36px;
+    font-weight:bold;
+    color:#ffd700;
+    text-shadow:2px 2px 8px #000;
+    margin-bottom:30px;
+  }
+
+  input {
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border-radius:10px;
+    border:none;
+    background: rgba(255,255,255,0.1);
+    color:#fff;
+    font-size:16px;
+  }
+
+  button {
+    background:#ffd700;
+    color:#000;
+    border:none;
+    padding:12px 20px;
+    margin-top:10px;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:16px;
+    width:100%;
+    transition:0.3s;
+  }
+
+  button:hover {
+    background:#fff;
+    color:#000;
+    transform:scale(1.05);
+  }
+
+  .toggle-link {
+    margin-top:15px;
+    display:block;
+    color:#ffd700;
+    cursor:pointer;
+    text-decoration:underline;
+  }
+
+  .dashboard {
+    display:none;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .dashboard-buttons {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-top:20px;
+    gap:15px;
+  }
+
+  .dashboard-buttons button {
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    font-size:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+    box-shadow:0 0 15px rgba(255,215,0,0.4);
+    background: rgba(0,0,0,0.5);
+    color:#ffd700;
+    transition:0.3s;
+  }
+
+  .dashboard-buttons button:hover {
+    transform:scale(1.1) rotate(-5deg);
+    background: rgba(255,255,255,0.1);
+    box-shadow:0 0 25px #ffd700,0 0 50px rgba(255,215,0,0.3);
+  }
+
+  .ai-bot {
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    background:#ffd700;
+    color:#000;
+    font-size:32px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    box-shadow:0 0 25px #ffd700;
+    z-index:999;
+    transition:0.3s;
+  }
+  .ai-bot:hover {transform: scale(1.1); box-shadow:0 0 50px #ffd700;}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="logo">Fun Zone</div>
+
+  <!-- Login/Register Form -->
+  <div id="authForm">
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="handleAuth()">Login / Register</button>
+    <span class="toggle-link" onclick="toggleForm()">Switch to Register/Login</span>
+  </div>
+
+  <!-- Dashboard -->
+  <div class="dashboard" id="dashboard">
+    <div class="logo">Welcome, <span id="userEmail"></span></div>
+    <div class="dashboard-buttons">
+      <button>💬 Chat</button>
+      <button>✊ Posts</button>
+      <button>📝 Thoughts</button>
+      <button>📄 Documents</button>
+      <button>📅 Events</button>
+      <button>🎉 Entertainment</button>
+      <button>🔗 Connections</button>
+    </div>
+    <button onclick="logout()" style="margin-top:20px;">Logout</button>
+  </div>
+</div>
+
+<div class="ai-bot" onclick="alert('AI Chat Bot coming soon! 🤖')">🤖</div>
+
+<script>
+let isLogin=true; // toggle form
+
+function toggleForm(){
+  const link=document.querySelector('.toggle-link');
+  if(isLogin){
+    document.getElementById('authForm').querySelector('button').innerText="Register";
+    link.innerText="Switch to Login";
+    isLogin=false;
+  }else{
+    document.getElementById('authForm').querySelector('button').innerText="Login";
+    link.innerText="Switch to Register";
+    isLogin=true;
+  }
+}
+
+function handleAuth(){
+  const email=document.getElementById('email').value;
+  const password=document.getElementById('password').value;
+  if(!email||!password){alert('Enter email & password'); return;}
+
+  const users=JSON.parse(localStorage.getItem('users')||'{}');
+
+  if(isLogin){
+    // Login
+    if(users[email] && users[email]===password){
+      showDashboard(email);
+    }else{
+      alert('User not found or wrong password');
+    }
+  }else{
+    // Register
+    if(users[email]){
+      alert('User already exists');
+    }else{
+      users[email]=password;
+      localStorage.setItem('users',JSON.stringify(users));
+      alert('Registered successfully!');
+      showDashboard(email);
+    }
+  }
+}
+
+function showDashboard(email){
+  document.getElementById('authForm').style.display='none';
+  const dash=document.getElementById('dashboard');
+  dash.style.display='flex';
+  document.getElementById('userEmail').innerText=email;
+}
+
+function logout(){
+  document.getElementById('dashboard').style.display='none';
+  document.getElementById('authForm').style.display='block';
+  document.getElementById('email').value='';
+  document.getElementById('password').value='';
+  isLogin=true;
+  document.querySelector('.toggle-link').innerText='Switch to Register/Login';
+  document.getElementById('authForm').querySelector('button').innerText='Login';
+}
+</script>
+
+</body>
+</html>
 
