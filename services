@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Services - TechMph Solutions</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT17TYb-z3JUVKHM6orI6g7suKzj--dKWamcQ&s") no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+    header {
+      background: rgba(0, 0, 50, 0.8);
+      padding: 14px 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-container img {
+      height: 40px;
+      border-radius: 6px;
+    }
+    .logo-container span {
+      color: #ffd700;
+      font-weight: bold;
+      font-size: 22px;
+    }
+    nav ul { list-style: none; display: flex; gap: 18px; margin: 0; padding: 0; }
+    nav ul li a {
+      color: #fff; text-decoration: none; padding: 8px 14px; border-radius: 6px; transition: 0.3s;
+    }
+    nav ul li a:hover, nav ul li a.active {
+      background: linear-gradient(45deg, #ffd700, #ffb700); 
+      color: #000;
+    }
+    .content-box {
+      margin-top: 100px; 
+      background: rgba(0, 0, 0, 0.7);
+      padding: 50px; 
+      border-radius: 12px; 
+      max-width: 900px; 
+      margin: 100px auto;
+    }
+    h1, h2 { color: #ffd700; margin-bottom: 20px; }
+    ul { list-style: square; margin-left: 20px; }
+    .btn {
+      background: linear-gradient(45deg, #ffd700, #ffb700); 
+      color: #000; 
+      padding: 10px 20px;
+      border-radius: 30px; 
+      text-decoration: none; 
+      font-weight: bold; 
+      transition: 0.3s;
+    }
+    .btn:hover { 
+      background: linear-gradient(45deg, #ffb700, #ffd700); 
+      transform: scale(1.05); 
+    }
+    footer {
+      background: rgba(0, 0, 50, 0.8); 
+      text-align: center; 
+      padding: 20px; 
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="https://www.bing.com/images/blob?bcid=S9yCJDvlB-cIhtUQu..5jOdYgf40.....0w" alt="TechMph Solutions Logo">
+      <span>TechMph Solutions</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="clients.html">Clients</a></li>
+        <li><a href="achievements.html">Achievements</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="content-box">
+    <h1>Our Services</h1>
+    <p>We provide end-to-end IT solutions tailored to your business needs:</p>
+    <ul>
+      <li>💻 Software Development</li>
+      <li>🌐 Web & Mobile App Development</li>
+      <li>☁️ Cloud Hosting & Solutions</li>
+      <li>🔒 Cybersecurity Services</li>
+      <li>📊 AI & Data Analytics</li>
+      <li>📈 Digital Marketing</li>
+      <li>💡 IT Consulting</li>
+    </ul>
+    <a href="contact.html" class="btn">Request a Quote</a>
+  </section>
+
+  <footer>
+    <p>© 2025 TechMph Solutions. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
